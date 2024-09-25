@@ -7,7 +7,39 @@ using namespace std;
 // Function to find the median
 double findMedian(int arr1[], int size1, int arr2[], int size2) {
     
-// Your code here
+vector<int> merged;
+    int i = 0, j = 0;
+
+   
+    while (i < size1 && j < size2) {
+        if (arr1[i] < arr2[j]) {
+            merged.push_back(arr1[i]);
+            i++;
+        } else {
+            merged.push_back(arr2[j]);
+            j++;
+        }
+    }
+
+    
+    while (i < size1) {
+        merged.push_back(arr1[i]);
+        i++;
+    }
+
+    
+    while (j < size2) {
+        merged.push_back(arr2[j]);
+        j++;
+    }
+
+    
+    int totalSize = size1 + size2;
+    if (totalSize % 2 == 0) {
+        return (merged[totalSize / 2 - 1] + merged[totalSize / 2]) / 2.0;
+    } else {
+        return merged[totalSize / 2];
+    }
 
 }
 
