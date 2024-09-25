@@ -88,13 +88,13 @@ void displayTowers() {
 void rearrangeDisks(int n, Stack& A, Stack& B, Stack& C, char from, char to, char aux) {
     //Write your code here
     if (n == 1) {
-        cout << "Move disk 1 from " << from << " to " << to << endl;
+        // cout << "Move disk 1 from " << from << " to " << to << endl;
         C.push(A.pop());
         displayTowers();
         return;
     }
     rearrangeDisks(n - 1, A, C, B, from, aux, to);
-    cout << "Move disk " << n << " from " << from << " to " << to << endl;
+    // cout << "Move disk " << n << " from " << from << " to " << to << endl;
     C.push(A.pop());
     displayTowers();
     rearrangeDisks(n - 1, B, A, C, aux, to, from);
@@ -102,7 +102,7 @@ void rearrangeDisks(int n, Stack& A, Stack& B, Stack& C, char from, char to, cha
 
 int main() { // The main function has been defined for you, do not edit anything here.
     int n;
-    cout << "Enter the number of disks: ";
+    // cout << "Enter the number of disks: ";
     cin >> n;
 
     A = new Stack(n);
