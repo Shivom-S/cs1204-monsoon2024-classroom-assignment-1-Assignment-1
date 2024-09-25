@@ -89,13 +89,13 @@ void rearrangeDisks(int n, Stack& A, Stack& B, Stack& C, char from, char to, cha
     //Write your code here
     if (n == 1) {
         cout << "Move disk 1 from " << from << " to " << to << endl;
-        C.push(A.pop(n));
+        C.push(A.pop(n);
         displayTowers();
         return;
     }
     rearrangeDisks(n - 1, A, C, B, from, aux, to);
     cout << "Move disk " << n << " from " << from << " to " << to << endl;
-    C.push(A.pop(n));
+    C.push(A.pop());
     displayTowers();
     rearrangeDisks(n - 1, B, A, C, aux, to, from);
 }
